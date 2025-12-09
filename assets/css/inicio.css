@@ -1,0 +1,2755 @@
+:root {
+  --primario: #1A1A1A;
+  --secundario: #F2F2F2;
+  --acento: #E2B93B;
+  --fondo: #D1D1D1;
+  --texto: #2B2B2B;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--texto);
+  background-color: var(--secundario);
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: var(--secundario);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--primario);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--acento);
+}
+
+/* Botón modo oscuro */
+.theme-btn {
+  background: none;
+  border: none;
+  color: var(--primario);
+  font-size: 1.4rem;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Hero */
+.hero {
+  background-color: var(--fondo);
+  text-align: center;
+  padding: 140px 20px 80px;
+  border-bottom: 4px solid var(--acento);
+}
+
+.hero-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--primario);
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 0 auto 20px;
+  color: var(--texto);
+}
+
+.btn {
+  background-color: var(--acento);
+  color: var(--primario);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #d7a931;
+}
+
+/* Secciones */
+main section {
+  padding: 60px 10%;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--primario);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Museos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+   flex-shrink: 0;
+}
+
+.card h4 {
+  margin: 16px;
+  color: var(--primario);
+}
+
+.card p {
+  margin: 0 16px 20px;
+  color: var(--texto);
+  font-size: 0.95rem;
+}
+
+.card h4,
+.card p {
+  flex-grow: 1;
+}
+
+.card .btn-detalles {
+  align-self: flex-start;
+  margin: 16px;
+  margin-top: auto;
+}
+
+/* Categorías */
+.categorias {
+  background-color: var(--fondo);
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.cat {
+  background-color: var(--acento);
+  color: var(--primario);
+  text-align: center;
+  padding: 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cat:hover {
+  transform: scale(1.05);
+}
+
+/* Curiosidades */
+.curiosidades {
+  background-color: var(--secundario);
+}
+
+.curios-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.dato {
+  background-color: var(--fondo);
+  padding: 20px;
+  border-radius: 10px;
+  color: var(--primario);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primario);
+  color: var(--secundario);
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* === Apartado de Obras Destacadas === */
+.obras {
+  background-color: var(--fondo);
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.obras h2 {
+  color: var(--primario);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.obras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.obra-card {
+  background-color: var(--secundario);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.obra-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.obra-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.obra-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: var(--primario);
+  font-size: 1.2rem;
+}
+
+.obra-card p {
+  color: var(--texto);
+  font-size: 0.95rem;
+  padding-bottom: 1rem;
+}
+
+/* === Menú hamburguesa === */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--primario);
+}
+
+/* ===== BOTÓN DE LECTOR DE VOZ ===== */
+.speech-dropdown {
+    position: relative;
+    margin-right: 10px;
+}
+
+.speech-menu-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.speech-menu-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.speech-menu-btn.active {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: #667eea;
+}
+
+/* === MENÚ DESPLEGABLE DE VOZ === */
+.speech-controls {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10002;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    animation: slideDown 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.speech-controls.active {
+    display: flex;
+}
+
+/* Cabecera de voz */
+.speech-controls .speech-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #E2B93B;
+    color: white;
+}
+
+.speech-controls .speech-header h5 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.speech-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.speech-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Opciones de voz */
+.speech-controls .speech-options {
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.speech-controls .speech-option {
+    margin-bottom: 15px;
+}
+
+.speech-controls .speech-option:last-child {
+    margin-bottom: 0;
+}
+
+.speech-controls .speech-option label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Botones de velocidad */
+.speech-controls .speech-buttons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.speech-controls .speech-buttons button {
+    flex: 1;
+    padding: 8px 5px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    min-width: 50px;
+}
+
+.speech-controls .speech-buttons button:hover {
+    background: #e9e9e9;
+}
+
+.speech-controls .speech-buttons button.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+/* Select de voces */
+#speech-voice-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+#speech-voice-select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Control de volumen */
+#speech-volume {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #e9e9e9;
+    border-radius: 3px;
+    outline: none;
+}
+
+#speech-volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#speech-volume::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones de control */
+.speech-controls .speech-control-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #f9f9f9;
+}
+
+.speech-controls .speech-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.speech-controls .speech-btn.secondary {
+    background: #667eea;
+    color: white;
+}
+
+.speech-controls .speech-btn.secondary:hover {
+    background: #5a6fd8;
+}
+
+.speech-controls .speech-btn.danger {
+    background: #ff6b6b;
+    color: white;
+}
+
+.speech-controls .speech-btn.danger:hover {
+    background: #ff5252;
+}
+
+/* Barra de progreso */
+.speech-controls .speech-progress {
+    padding: 15px 20px;
+    background: white;
+}
+
+.speech-controls .speech-progress-bar {
+    height: 4px;
+    background: #e9e9e9;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.speech-controls .speech-progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #667eea;
+    transition: width 0.3s;
+}
+
+.speech-controls .speech-progress-text {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+}
+
+/* Modo oscuro */
+body[data-theme="dark"] .speech-controls {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+body[data-theme="dark"] .speech-menu-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .speech-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+body[data-theme="dark"] .speech-controls .speech-option label {
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] .speech-controls .speech-buttons button {
+    background: #333;
+    border-color: #444;
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] .speech-controls .speech-buttons button:hover {
+    background: #444;
+}
+
+body[data-theme="dark"] #speech-voice-select {
+    background: #333;
+    border-color: #444;
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] #speech-volume {
+    background: #444;
+}
+
+body[data-theme="dark"] .speech-controls .speech-control-buttons {
+    background: #2a2a2a;
+    border-top: 1px solid #333;
+}
+
+body[data-theme="dark"] .speech-controls .speech-progress {
+    background: #1e1e1e;
+    border-top: 1px solid #333;
+}
+
+body[data-theme="dark"] .speech-controls .speech-progress-text {
+    color: #aaa;
+}
+
+body[data-theme="dark"] .speech-controls .speech-progress-bar {
+    background: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .speech-controls {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        width: auto !important;
+        z-index: 10005;
+    }
+    
+    .speech-control-buttons {
+        flex-direction: column !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .speech-controls {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+    }
+    
+    .speech-btn {
+        font-size: 0.8rem !important;
+        padding: 8px !important;
+    }
+}
+
+/* Asegurar que los menús no se encimen */
+.accessibility-dropdown-menu {
+    z-index: 10001 !important;
+}
+
+.speech-controls {
+    z-index: 10002 !important;
+}
+
+.profile-card {
+    z-index: 10001 !important;
+}
+
+/* ===== RESPONSIVE === */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: var(--secundario);
+    width: 100%;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .theme-btn {
+    margin-left: 0;
+  }
+}
+
+/* === MODO OSCURO GENERAL === */
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: #f1f1f1;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Navegación */
+body[data-theme="dark"] header,
+body[data-theme="dark"] nav {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .nav-links a {
+  color: #f1f1f1;
+}
+
+body[data-theme="dark"] .nav-links a:hover {
+  color: #ff9900; /* color destacado */
+}
+
+/* Botón menú responsivo */
+body[data-theme="dark"] #menu-toggle {
+  color: #f1f1f1;
+}
+
+/* Secciones generales */
+body[data-theme="dark"] section {
+  background-color: #1a1a1a;
+  color: #eaeaea;
+}
+
+/* Cards, contenedores y artículos */
+body[data-theme="dark"] .card,
+body[data-theme="dark"] .obra-card {
+  background-color: #222;
+  color: #f5f5f5;
+  border: 1px solid #333;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body[data-theme="dark"] .card h3,
+body[data-theme="dark"] .obra-card h3 {
+  color: #ff9900;
+}
+
+/* Footer */
+body[data-theme="dark"] footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  border-top: 1px solid #333;
+}
+
+/* Íconos, botones, y enlaces */
+body[data-theme="dark"] button,
+body[data-theme="dark"] .btn {
+  background-color: #ff9900;
+  color: #121212;
+}
+
+body[data-theme="dark"] button:hover,
+body[data-theme="dark"] .btn:hover {
+  background-color: #ffa733;
+}
+
+/* Corrige títulos y encabezados */
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] h4 {
+  color: #fff;
+}
+
+/* Corrige etiquetas o badges */
+body[data-theme="dark"] .tag {
+  background-color: #333;
+  color: #ff9900;
+}
+
+/* === CORRECCIÓN DE TEXTOS EN HERO Y CARDS === */
+
+/* Textos dentro del hero */
+body[data-theme="dark"] .hero,
+body[data-theme="dark"] .hero h1,
+body[data-theme="dark"] .hero h2,
+body[data-theme="dark"] .hero p,
+body[data-theme="dark"] .hero span {
+  color: #ffffff !important;
+}
+
+/* Textos dentro de las cards generales */
+body[data-theme="dark"] .card h3,
+body[data-theme="dark"] .card p,
+body[data-theme="dark"] .card span {
+  color: #ffffff !important;
+}
+
+/* Textos dentro de las cards de obras */
+body[data-theme="dark"] .obra-card h3,
+body[data-theme="dark"] .obra-card p,
+body[data-theme="dark"] .obra-card span {
+  color: #ffffff !important;
+}
+
+/* Enlaces o botones dentro de las cards */
+body[data-theme="dark"] .card a,
+body[data-theme="dark"] .obra-card a {
+  color: #ffffff !important;
+}
+
+body[data-theme="dark"] .card a:hover,
+body[data-theme="dark"] .obra-card a:hover {
+  color: #ffffff !important;
+}
+
+.btn-detalles {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #ff6600;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-detalles:hover {
+  background-color: #e25500;
+}
+
+[data-theme="dark"] .btn-detalles {
+  background-color: #ff7b1a;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .btn-detalles:hover {
+  background-color: #ff9040;
+}
+
+/* === PANTALLA DE OBRA INDIVIDUAL === */
+.obra-detalle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 140px 10% 60px;
+  align-items: flex-start;
+  justify-content: center; /* centra horizontalmente en pantallas grandes */
+  background-color: var(--secundario);
+}
+
+.obra-imagen {
+  flex: 1 1 400px;
+  max-width: 500px;
+}
+
+.obra-imagen img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.obra-info {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* espacio entre los elementos */
+}
+
+.obra-info h2 {
+  font-size: 2rem;
+  color: var(--primario);
+  margin-bottom: 10px;
+}
+
+.obra-info .autor {
+  font-weight: 600;
+  color: var(--acento);
+  margin-bottom: 10px;
+}
+
+.obra-info .descripcion {
+  color: var(--texto);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.detalles-obra {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.detalles-obra li {
+  margin-bottom: 6px;
+  color: var(--texto);
+}
+
+.obra-extra {
+  margin-bottom: 6px;
+  color: var(--texto);
+}
+
+.btn-volver {
+  background-color: var(--acento);
+  color: var(--primario);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+  align-self: flex-start; /* asegura que el botón quede alineado al inicio */
+}
+
+.btn-volver:hover {
+  background-color: #d7a931;
+}
+
+/* === DARK MODE === */
+body[data-theme="dark"] .obra-detalle {
+  background-color: #121212;
+  color: #fff;
+}
+
+body[data-theme="dark"] .obra-info h2 {
+  color: #ffb84d;
+}
+
+body[data-theme="dark"] .obra-info .autor {
+  color: #ffa733;
+}
+
+body[data-theme="dark"] .obra-info .descripcion,
+body[data-theme="dark"] .detalles-obra li {
+  color: #e0e0e0;
+}
+
+body[data-theme="dark"] .btn-volver {
+  background-color: #ff9900;
+  color: #ffffff;
+}
+
+/* === LISTADO DE OBRAS === */
+.listado-obras {
+  padding: 140px 10% 60px;
+  text-align: center;
+  background-color: var(--secundario);
+}
+
+.listado-obras h2 {
+  color: var(--primario);
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.filtros select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: var(--primario);
+  cursor: pointer;
+  transition: border 0.3s;
+}
+
+.filtros select:hover {
+  border-color: var(--acento);
+}
+
+/* Botón de filtro */
+#btn-filtrar {
+  background-color: var(--acento);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  color: var(--primario);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#btn-filtrar:hover {
+  background-color: #d7a931;
+}
+
+/* Tarjetas de obras */
+.obras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.obra-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.obra-card:hover {
+  transform: translateY(-5px);
+}
+
+.obra-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.obra-card h3 {
+  margin: 16px 0 6px;
+  color: var(--primario);
+  font-size: 1.1rem;
+}
+
+.obra-card p {
+  color: var(--texto);
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+/* === DARK MODE === */
+body[data-theme="dark"] .listado-obras {
+  background-color: #121212;
+}
+
+body[data-theme="dark"] .filtros select {
+  background-color: #222;
+  color: #fff;
+  border-color: #444;
+}
+
+body[data-theme="dark"] .filtros select:hover {
+  border-color: #ff9900;
+}
+
+body[data-theme="dark"] .obra-card {
+  background-color: #222;
+  color: #f5f5f5;
+  border: 1px solid #333;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+}
+
+body[data-theme="dark"] .obra-card h3 {
+  color: #ffb84d; /* Corregido: visible en modo oscuro */
+}
+
+body[data-theme="dark"] .obra-card p {
+  color: #ddd;
+}
+
+
+/* === ESTILOS CORREGIDOS DEL PERFIL === */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-container {
+    position: relative;
+}
+
+.profile-btn {
+    background: none;
+    border: none;
+    color: var(--primario);
+    font-size: 1.4rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.profile-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+body[data-theme="dark"] .profile-btn {
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] .profile-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-card {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 300px;
+    background-color: var(--secundario);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    z-index: 1001;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-card.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body[data-theme="dark"] .profile-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* CABECERA CORREGIDA - ALINEACIÓN PERFECTA */
+.profile-header {
+    display: flex;
+    align-items: flex-start; /* Alinea al inicio (arriba) */
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    min-height: 70px;
+}
+
+body[data-theme="dark"] .profile-header {
+    border-bottom-color: #333;
+}
+
+.profile-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--acento);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primario);
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* INFORMACIÓN DEL PERFIL - ALINEACIÓN CORREGIDA */
+.profile-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente el contenido */
+    min-height: 60px; /* Misma altura que el avatar */
+}
+
+/* NOMBRE - asegura que el texto fluya correctamente */
+.profile-info h3 {
+    font-size: 1.2rem;
+    color: var(--primario);
+    margin-bottom: 4px; /* Reducido para acercar al email */
+    text-align: left;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Permite múltiples líneas */
+    display: block;
+    width: 100%;
+}
+
+/* CORREO - alineado perfectamente con el nombre */
+.profile-info p {
+    color: var(--texto);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left; /* Alineado a la izquierda */
+    margin: 0; /* Sin márgenes extra */
+    padding: 0; /* Sin padding extra */
+    display: block;
+    width: 100%;
+}
+
+/* Opcional: icono al lado del email */
+.profile-info p::before {
+    content: none; /* Removemos el icono si causa problemas */
+}
+
+body[data-theme="dark"] .profile-info h3 {
+    color: #fff;
+}
+
+body[data-theme="dark"] .profile-info p {
+    color: #ccc;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.logout-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.logout-btn:hover {
+    background-color: #ff3333;
+}
+
+body[data-theme="dark"] .logout-btn {
+    background-color: #ff6666;
+}
+
+body[data-theme="dark"] .logout-btn:hover {
+    background-color: #ff4d4d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-card {
+        position: fixed;
+        top: 80px;
+        right: 20px;
+        left: 20px;
+        width: auto;
+    }
+    
+    .nav-right {
+        gap: 10px;
+    }
+    
+    .profile-btn {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .profile-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .profile-info {
+        min-height: 50px; /* Ajusta a la altura del avatar en móvil */
+    }
+}
+
+/* Si el problema persiste, prueba esta alternativa más simple */
+.alternative-fix {
+    /* Alternativa: hacer que todo esté alineado al inicio */
+    .profile-info {
+        justify-content: flex-start; /* En lugar de center */
+        padding-top: 5px; /* Pequeño ajuste para compensar */
+    }
+    
+    .profile-info h3 {
+        margin-top: 0;
+        margin-bottom: 2px; /* Menor espacio entre nombre y email */
+    }
+}
+
+/* === ACCESIBILIDAD === */
+/* Modo negativo: invierte colores */
+/* Modo invertido */
+body.invertido {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* Alto contraste */
+body.alto-contraste {
+    filter: contrast(2) brightness(1.2);
+}
+
+/* Blanco y negro */
+body.blanco-negro {
+    filter: grayscale(1);
+}
+
+
+/* navbar.css o inicio.css */
+
+/* Contenedor de botones en nav-right */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* espacio entre los botones */
+}
+
+/* Botones de modo oscuro y accesibilidad */
+#theme-toggle,
+.accessibility-menu button {
+    background: none;
+    border: none;
+    font-size: 1.2rem; /* tamaño uniforme */
+    cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 5px;
+    transition: background 0.2s;
+}
+
+#theme-toggle:hover,
+.accessibility-menu button:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+/* Separar grupo de accesibilidad */
+.accessibility-menu {
+    display: flex;
+    gap: 0.2rem; /* espacio entre los iconos de accesibilidad */
+    margin-left: 0.3rem; /* separación del botón de modo oscuro */
+}
+
+[data-theme="dark"] {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+[data-theme="dark"] .navbar {
+    background-color: #1e1e1e !important;
+}
+
+[data-theme="dark"] a {
+    color: #bb86fc !important;
+}
+
+/* Accesibilidad - Modo negativo */
+.accessibility-negative {
+    filter: invert(1) hue-rotate(180deg) !important;
+}
+
+.accessibility-negative img {
+    filter: invert(1) hue-rotate(180deg) !important;
+}
+
+/* Accesibilidad - Alto contraste */
+.accessibility-contrast {
+    background-color: black !important;
+    color: yellow !important;
+}
+
+.accessibility-contrast a {
+    color: #ffff00 !important;
+    text-decoration: underline !important;
+}
+
+.accessibility-contrast button {
+    background-color: yellow !important;
+    color: black !important;
+    border: 2px solid white !important;
+}
+
+/* Accesibilidad - Escala de grises */
+.accessibility-grayscale {
+    filter: grayscale(100%) !important;
+}
+
+/* Botones activos de accesibilidad */
+button.active-accessibility {
+    border: 2px solid #ff4081 !important;
+    background-color: rgba(255, 64, 129, 0.1) !important;
+}
+
+/* ===== ESTILOS PARA BOTONES DE ACCESIBILIDAD ===== */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Contenedor de botones de accesibilidad */
+.accessibility-buttons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 10px;
+}
+
+/* Botones de accesibilidad generales */
+
+/* Hover effects */
+#dark-mode-toggle:hover,
+#negative-mode-toggle:hover,
+#contrast-mode-toggle:hover,
+#grayscale-toggle:hover,
+#reset-accessibility:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Active state */
+#dark-mode-toggle.active-mode,
+#negative-mode-toggle.active-accessibility,
+#contrast-mode-toggle.active-accessibility,
+#grayscale-toggle.active-accessibility {
+    background: var(--acento);
+    color: var(--primario);
+    border-color: var(--acento);
+    box-shadow: 0 0 0 2px rgba(226, 185, 59, 0.3);
+}
+
+/* Tooltips */
+#dark-mode-toggle::after,
+#negative-mode-toggle::after,
+#contrast-mode-toggle::after,
+#grayscale-toggle::after,
+#reset-accessibility::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primario);
+    color: var(--secundario);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
+    z-index: 1000;
+    pointer-events: none;
+    font-weight: 500;
+}
+
+#dark-mode-toggle:hover::after,
+#negative-mode-toggle:hover::after,
+#contrast-mode-toggle:hover::after,
+#grayscale-toggle:hover::after,
+#reset-accessibility:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modo oscuro para botones */
+body[data-theme="dark"] #dark-mode-toggle,
+body[data-theme="dark"] #negative-mode-toggle,
+body[data-theme="dark"] #contrast-mode-toggle,
+body[data-theme="dark"] #grayscale-toggle,
+body[data-theme="dark"] #reset-accessibility {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] #dark-mode-toggle:hover,
+body[data-theme="dark"] #negative-mode-toggle:hover,
+body[data-theme="dark"] #contrast-mode-toggle:hover,
+body[data-theme="dark"] #grayscale-toggle:hover,
+body[data-theme="dark"] #reset-accessibility:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+body[data-theme="dark"] #dark-mode-toggle.active-mode,
+body[data-theme="dark"] #negative-mode-toggle.active-accessibility,
+body[data-theme="dark"] #contrast-mode-toggle.active-accessibility,
+body[data-theme="dark"] #grayscale-toggle.active-accessibility {
+    background: #ff9900;
+    color: #121212;
+    border-color: #ff9900;
+}
+
+/* Botón de perfil ajustado */
+.profile-container {
+    margin-left: 5px;
+}
+
+.profile-btn {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+body[data-theme="dark"] .profile-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+body[data-theme="dark"] .profile-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== RESPONSIVE PARA BOTONES DE ACCESIBILIDAD ===== */
+
+@media (max-width: 1024px) {
+    .accessibility-buttons {
+        gap: 3px;
+        margin-right: 8px;
+    }
+    
+    #dark-mode-toggle,
+    #negative-mode-toggle,
+    #contrast-mode-toggle,
+    #grayscale-toggle,
+    #reset-accessibility {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+    
+    .profile-btn {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 5%;
+    }
+    
+    .nav-right {
+        gap: 5px;
+    }
+    
+    .accessibility-buttons {
+        margin-right: 5px;
+    }
+    
+    /* En móvil, agrupar botones en columna dentro del menú hamburguesa */
+    #dark-mode-toggle,
+    #negative-mode-toggle,
+    #contrast-mode-toggle,
+    #grayscale-toggle,
+    #reset-accessibility {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    /* Tooltips ajustados para móvil */
+    #dark-mode-toggle::after,
+    #negative-mode-toggle::after,
+    #contrast-mode-toggle::after,
+    #grayscale-toggle::after,
+    #reset-accessibility::after {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        bottom: -30px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* En pantallas muy pequeñas, podemos ocultar algunos botones o ajustar */
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    .accessibility-buttons {
+        gap: 2px;
+    }
+    
+    #dark-mode-toggle,
+    #negative-mode-toggle,
+    #contrast-mode-toggle,
+    #grayscale-toggle,
+    #reset-accessibility {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+    
+    .profile-btn {
+        width: 30px;
+        height: 30px;
+    }
+    
+    /* Ocultar texto de tooltips en móvil muy pequeño */
+    #dark-mode-toggle::after,
+    #negative-mode-toggle::after,
+    #contrast-mode-toggle::after,
+    #grayscale-toggle::after,
+    #reset-accessibility::after {
+        display: none;
+    }
+}
+
+/* Para cuando el menú hamburguesa está activo en móvil */
+.nav-links.active + .nav-right {
+    /* Si quieres mostrar botones de accesibilidad en el menú desplegable */
+    /* Aquí puedes ajustar según tu preferencia */
+}
+
+/* ===== SEPARADOR VISUAL ENTRE GRUPOS DE BOTONES ===== */
+.accessibility-buttons::after {
+    content: '';
+    display: none; /* Oculto por defecto, puedes activarlo si quieres separador */
+}
+
+/* Ajuste para alinear verticalmente todos los elementos */
+.logo, .nav-links, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Asegurar que navbar mantenga altura consistente */
+.navbar {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+/* ===== NAVBAR RESPONSIVE ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--secundario);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    min-height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    white-space: nowrap;
+}
+
+/* Menu hamburguesa */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--primario);
+    padding: 5px;
+}
+
+/* Links de navegación */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primario);
+    font-weight: 500;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.nav-links a:hover {
+    color: var(--acento);
+}
+
+/* Contenedor derecho */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Botones de accesibilidad */
+.accessibility-buttons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.accessibility-buttons button {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.1);
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.accessibility-buttons button:hover {
+    background: rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+/* Modo oscuro para navbar */
+body[data-theme="dark"] .navbar {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(255,255,255,0.1);
+}
+
+body[data-theme="dark"] .nav-links a {
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] .menu-toggle {
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] .accessibility-buttons button {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.1);
+    color: #f1f1f1;
+}
+
+/* ===== MEDIA QUERIES PARA RESPONSIVE ===== */
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 4%;
+        flex-wrap: wrap;
+    }
+    
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    .menu-toggle {
+        display: block;
+        order: 2;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: var(--secundario);
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        z-index: 999;
+        gap: 15px;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 10px 20px;
+    }
+    
+    .nav-right {
+        order: 3;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+    
+    .accessibility-buttons {
+        gap: 3px;
+    }
+    
+    .accessibility-buttons button {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+    
+    body[data-theme="dark"] .nav-links {
+        background-color: #1e1e1e;
+    }
+}
+
+/* Mobile pequeño (576px) */
+@media (max-width: 576px) {
+    .navbar {
+        padding: 10px 3%;
+        min-height: 60px;
+    }
+    
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+    
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .nav-links {
+        top: 60px;
+    }
+    
+    .nav-right {
+        gap: 5px;
+    }
+    
+    .accessibility-buttons button {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    
+    /* Opcional: ocultar algunos botones en móvil muy pequeño */
+    @media (max-width: 400px) {
+        #grayscale-toggle,
+        #reset-accessibility {
+            display: none;
+        }
+    }
+}
+
+/* Desktop grande (1200px+) */
+@media (min-width: 1200px) {
+    .navbar {
+        padding: 15px 8%;
+    }
+    
+    .nav-links {
+        gap: 35px;
+    }
+    
+    .accessibility-buttons {
+        gap: 8px;
+    }
+}
+
+/* Asegurar que el contenido no se esconda bajo la navbar */
+body {
+    padding-top: 70px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+}
+
+/* ===== BOTÓN DE ACCESIBILIDAD ===== */
+.accessibility-dropdown {
+    position: relative;
+    margin-right: 10px;
+}
+
+.accessibility-menu-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.accessibility-menu-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Indicador cuando algún modo está activo */
+.accessibility-menu-btn.has-active-mode::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 10px;
+    height: 10px;
+    background: #4CAF50;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* === MENÚ DESPLEGABLE (CENTRADO Y ESTÉTICO) === */
+.accessibility-dropdown-menu {
+    position: absolute;
+    top: 50px;
+    right: 50%;
+    transform: translateX(50%);
+    width: 320px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+    display: none;
+    flex-direction: column;
+    z-index: 1001;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.accessibility-dropdown-menu.active {
+    display: flex;
+    animation: slideDown 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateX(50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(50%) translateY(0);
+    }
+}
+
+/* Cabecera - CENTRADA */
+.accessibility-header {
+    padding: 16px 18px;
+    background: #E2B93B;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.accessibility-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+}
+
+.accessibility-header small {
+    display: none;
+}
+
+/* Opciones - CENTRADAS */
+.accessibility-options {
+    padding: 12px 0;
+    max-height: 320px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cada opción - CENTRADA VISUALMENTE */
+.accessibility-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;;
+    gap: 12px;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    margin: 0;
+    border-radius: 0;
+    white-space: nowrap;
+}
+
+.accessibility-option:hover {
+    background: rgba(102, 126, 234, 0.06);
+}
+
+.accessibility-option.active {
+    background: rgba(76, 175, 80, 0.08);
+    border-left: 3px solid #4CAF50;
+    padding-left: 13px;
+}
+
+/* Icono - CENTRADO */
+.accessibility-icon {
+    font-size: 1.4rem;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 8px;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.accessibility-option:hover .accessibility-icon {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+    transform: scale(1.05);
+}
+
+.accessibility-option.active .accessibility-icon {
+    background: rgba(76, 175, 80, 0.12);
+}
+
+/* Texto - CENTRADO */
+.accessibility-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    text-align: center;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.accessibility-text strong {
+    font-size: 0.9rem;
+    color: #2c2c2c;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+    letter-spacing: 0.2px;
+}
+
+.accessibility-text small {
+    font-size: 0.75rem;
+    color: #999;
+    line-height: 1.1;
+    margin: 0;
+    display: none;
+}
+
+/* Check - ESTILO MEJORADO */
+.accessibility-check {
+   margin-left: auto;
+    display: none;
+    color: #4153b9;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: opacity 0.2s;
+}
+
+.accessibility-option.active .accessibility-check {
+    display: flex;
+    animation: popIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 1;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+    70% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Pie - CENTRADO */
+.accessibility-footer {
+    padding: 12px 14px;
+    background: linear-gradient(to bottom, #fafafa, #f5f5f5);
+    display: flex;
+    justify-content: center;
+}
+
+.reset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 280px;
+    padding: 10px 14px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+    color: white;
+    border:  none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+/* === SCROLLBAR PERSONALIZADO === */
+.accessibility-options::-webkit-scrollbar {
+    width: 6px;
+}
+
+.accessibility-options::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 3px;
+}
+
+.accessibility-options::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 3px;
+}
+
+.accessibility-options::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}
+
+/* DARK MODE */
+body[data-theme="dark"] .accessibility-dropdown-menu {
+    background: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+}
+
+body[data-theme="dark"] .accessibility-option {
+    background: transparent;
+}
+
+body[data-theme="dark"] .accessibility-option:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+body[data-theme="dark"] .accessibility-option.active {
+    background: rgba(76, 175, 80, 0.12);
+    border-left-color: #66BB6A;
+}
+
+body[data-theme="dark"] .accessibility-text strong {
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] .accessibility-text small {
+    color: #888;
+}
+
+body[data-theme="dark"] .accessibility-icon {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
+}
+
+body[data-theme="dark"] .accessibility-option:hover .accessibility-icon {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+}
+
+body[data-theme="dark"] .accessibility-footer {
+    border-top-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom, #333, #2d2d2d);
+}
+
+body[data-theme="dark"] .accessibility-options::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+body[data-theme="dark"] .accessibility-options::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+body[data-theme="dark"] .accessibility-options::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+/* ===== FORZAR CENTRADO DEFINITIVO DEL PANEL DE ACCESIBILIDAD ===== */
+
+/* Asegura que el contenedor sea el ancho deseado y esté encima */
+.accessibility-dropdown-menu {
+  right: 50% !important;
+  transform: translateX(50%) !important;
+  width: 320px !important;
+  z-index: 9999 !important;
+}
+
+/* Fila completa: agrupa y centra su contenido */
+.accessibility-option {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important; /* fuerza el grupo en el centro */
+  gap: 12px !important;
+  padding: 12px 16px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+/* Evitar que cualquier regla previa haga que el texto se expanda */
+.accessibility-text {
+  flex: none !important;         /* evita que tome todo el espacio */
+  min-width: 0 !important;
+  max-width: 170px !important;   /* ajusta según gusto (reduce si quieres más espacio) */
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+  display: inline-flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+/* Icono: no se deforma y queda junto al texto */
+.accessibility-icon {
+  flex: none !important;
+  width: 34px !important;
+  height: 34px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Check: no lo empujes con margin-left:auto en ninguna parte */
+.accessibility-check {
+  flex: none !important;
+  margin-left: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.1rem !important;
+  opacity: 0 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+/* Mostrar check cuando está activo */
+.accessibility-option.active .accessibility-check {
+  opacity: 1 !important;
+}
+
+/* Evitar que el border-left del estado activo desplace el contenido.
+   Reemplazamos el borde por un pequeño efecto visual que no afecta el layout */
+.accessibility-option.active {
+  border-left: none !important;
+  padding-left: 16px !important; /* mantener padding uniforme */
+  box-shadow: inset 4px 0 0 rgba(76,175,80,0.12) !important; /* indicación visual similar al borde */
+}
+
+/* Hover: mantener centrado y mejorar look */
+.accessibility-option:hover {
+  background: rgba(102, 126, 234, 0.04) !important;
+  transform: none !important;
+}
+
+/* Asegura el texto visible en modo oscuro */
+body[data-theme="dark"] .accessibility-text strong {
+  color: #fff !important;
+}
+
+/* Pequeñas adaptaciones responsive (reduce max-width del texto en pantallas pequeñas) */
+@media (max-width: 420px) {
+  .accessibility-text { max-width: 120px !important; font-size: 13px !important; }
+  .accessibility-dropdown-menu { width: 280px !important; }
+}
+
+.accesibilidad button:focus,
+.accesibilidad a:focus {
+  outline: none !important;
+}
+
+/* ===== SOLUCIÓN DEFINITIVA PARA SCROLL JUMP ===== */
+
+/* 1. CONTENEDOR PARA TODO EL CONTENIDO (excepto navbar) */
+.content-container {
+    position: relative;
+    z-index: 1;
+    /* Esto recibirá los filtros */
+    min-height: 100vh;
+    padding-top: 70px; /* Para la navbar fija */
+    margin-top: -70px; /* Compensar para que hero quede arriba */
+}
+
+/* 2. EL HERO DEBE IGNORAR EL PADDING SUPERIOR */
+.content-container > .hero {
+    margin-top: 70px; /* Posicionar correctamente */
+    padding-top: 0;
+}
+
+/* 3. APLICAR FILTROS SOLO AL CONTENEDOR */
+.content-container.accessibility-negative {
+    filter: invert(1) hue-rotate(180deg) !important;
+    isolation: isolate; /* Importante: aislar del resto */
+}
+
+.content-container.accessibility-contrast {
+    background-color: black !important;
+    color: yellow !important;
+}
+
+.content-container.accessibility-contrast a {
+    color: #ffff00 !important;
+    text-decoration: underline !important;
+}
+
+.content-container.accessibility-grayscale {
+    filter: grayscale(100%) !important;
+    isolation: isolate;
+}
+
+/* 4. IMÁGENES DENTRO DEL CONTENIDO */
+.content-container.accessibility-negative img,
+.content-container.accessibility-grayscale img {
+    filter: inherit !important;
+}
+
+/* 5. NAVBAR DEBE ESTAR FUERA DEL CONTENEDOR Y SIN FILTROS */
+#navbar-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 10000 !important;
+    /* CRÍTICO: No heredar filtros */
+    filter: none !important;
+    transform: none !important;
+    isolation: isolate;
+}
+
+/* 6. ASEGURAR QUE LA NAVBAR MANTENGA SUS ESTILOS */
+.navbar {
+    /* Reset completo de cualquier efecto de filtro */
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* 7. TODOS LOS ELEMENTOS DE LA NAVBAR SIN FILTROS */
+.navbar * {
+    filter: none !important;
+}
+
+/* 8. MENÚ DESPLEGABLE SIN FILTROS */
+.accessibility-dropdown-menu {
+    filter: none !important;
+    isolation: isolate;
+    position: relative;
+    z-index: 10001;
+}
+
+/* 9. RESPONSIVE */
+@media (max-width: 768px) {
+    .content-container {
+        padding-top: 60px;
+        margin-top: -60px;
+    }
+    
+    .content-container > .hero {
+        margin-top: 60px;
+    }
+}
+
+/* 10. PREVENIR ANIMACIONES QUE CAUSEN SCROLL */
+html {
+    scroll-behavior: auto !important;
+}
+
+/* 11. FORZAR RENDERIZADO GPU PARA MEJOR RENDIMIENTO */
+.content-container[class*="accessibility-"] {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* 12. BOTONES SIN EFECTOS DE FOCO QUE CAUSEN SCROLL */
+button:focus,
+a:focus {
+    outline: none !important;
+}
+
+/* 13. ASEGURAR QUE BODY NO TENGA OVERFLOW OCULTO */
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* LECTURA */
+
+/* ===== LECTOR DE VOZ (TEXT-TO-SPEECH) ===== */
+
+/* Contenedor de controles de voz */
+.speech-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 320px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    z-index: 10004;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Cabecera */
+.speech-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.speech-header h5 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.speech-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.speech-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Opciones */
+.speech-options {
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.speech-option {
+    margin-bottom: 15px;
+}
+
+.speech-option:last-child {
+    margin-bottom: 0;
+}
+
+.speech-option label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Botones de velocidad */
+.speech-buttons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.speech-buttons button {
+    flex: 1;
+    padding: 8px 5px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    min-width: 50px;
+}
+
+.speech-buttons button:hover {
+    background: #e9e9e9;
+}
+
+.speech-buttons button.active {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+/* Select de voces */
+#speech-voice-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#speech-voice-select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Control de volumen */
+#speech-volume {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #e9e9e9;
+    border-radius: 3px;
+    outline: none;
+}
+
+#speech-volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#speech-volume::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones de control */
+.speech-control-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 15px 20px;
+    background: #f9f9f9;
+}
+
+.speech-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.speech-btn.secondary {
+    background: #667eea;
+    color: white;
+}
+
+.speech-btn.secondary:hover {
+    background: #5a6fd8;
+}
+
+.speech-btn.danger {
+    background: #ff6b6b;
+    color: white;
+}
+
+.speech-btn.danger:hover {
+    background: #ff5252;
+}
+
+/* Barra de progreso */
+.speech-progress {
+    padding: 15px 20px;
+    background: white;
+}
+
+.speech-progress-bar {
+    height: 4px;
+    background: #e9e9e9;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.speech-progress-bar::after {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #667eea;
+    transition: width 0.3s;
+}
+
+.speech-progress-text {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+}
+
+/* Indicador de qué se está leyendo */
+.speech-reading {
+    background-color: rgba(102, 126, 234, 0.1) !important;
+    border-left: 3px solid #667eea !important;
+    padding-left: 10px !important;
+    transition: all 0.3s ease;
+}
+
+/* Botón de voz activo */
+#speech-toggle.active .accessibility-icon {
+    animation: pulse 1.5s infinite;
+    background: rgba(102, 126, 234, 0.2) !important;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Modo oscuro */
+body[data-theme="dark"] .speech-controls {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+body[data-theme="dark"] .speech-menu-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body[data-theme="dark"] .speech-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+body[data-theme="dark"] .speech-controls .speech-option label {
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] .speech-controls .speech-buttons button {
+    background: #333;
+    border-color: #444;
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] .speech-controls .speech-buttons button:hover {
+    background: #444;
+}
+
+body[data-theme="dark"] #speech-voice-select {
+    background: #333;
+    border-color: #444;
+    color: #f1f1f1;
+}
+
+body[data-theme="dark"] #speech-volume {
+    background: #444;
+}
+
+body[data-theme="dark"] .speech-controls .speech-control-buttons {
+    background: #2a2a2a;
+    border-top: 1px solid #333;
+}
+
+body[data-theme="dark"] .speech-controls .speech-progress {
+    background: #1e1e1e;
+    border-top: 1px solid #333;
+}
+
+body[data-theme="dark"] .speech-controls .speech-progress-text {
+    color: #aaa;
+}
+
+body[data-theme="dark"] .speech-controls .speech-progress-bar {
+    background: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .speech-controls {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        width: auto !important;
+        z-index: 10005;
+    }
+    
+    .speech-control-buttons {
+        flex-direction: column !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .speech-controls {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+    }
+    
+    .speech-btn {
+        font-size: 0.8rem !important;
+        padding: 8px !important;
+    }
+}
+

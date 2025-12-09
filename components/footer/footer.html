@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Virtual Accesible - Footer Cultural</title>
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        :root {
+            /* Paleta de colores cultural mexicana */
+            --color-terracota: #C26A44;
+            --color-azul-patrimonio: #2F4858;
+            --color-dorado: #D9A441;
+            --color-marfil: #F7F3EF;
+            --color-gris-piedra: #3E3E3E;
+            --color-gris-claro: #8A8A8A;
+            --color-blanco: #FFFFFF;
+            --color-sombra: rgba(47, 72, 88, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--color-marfil);
+            color: var(--color-gris-piedra);
+        }
+        
+        .content {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .content h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--color-azul-patrimonio);
+            max-width: 800px;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+        
+        /* Estilos del footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-azul-patrimonio) 0%, #253947 100%);
+            color: var(--color-marfil);
+            padding: 3rem 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Patrón decorativo inspirado en arte prehispánico */
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--color-terracota), var(--color-dorado), var(--color-terracota));
+            background-size: 200% 100%;
+            animation: gradientShift 10s ease infinite;
+        }
+        
+        .footer::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-info h3 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--color-dorado);
+            letter-spacing: 0.5px;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .footer-info h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--color-terracota);
+            border-radius: 2px;
+        }
+        
+        .footer-info p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(247, 243, 239, 0.85);
+            max-width: 320px;
+        }
+        
+        .footer-nav h4,
+        .footer-links h4,
+        .footer-social-section h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--color-marfil);
+            position: relative;
+            padding-bottom: 0.7rem;
+        }
+        
+        .footer-nav h4::after,
+        .footer-links h4::after,
+        .footer-social-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--color-terracota);
+            border-radius: 2px;
+        }
+        
+        .footer-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+        
+        .footer-nav ul li a {
+            color: rgba(247, 243, 239, 0.8);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            padding: 0.4rem 0;
+            position: relative;
+            display: inline-block;
+            font-weight: 500;
+        }
+        
+        .footer-nav ul li a::before {
+            content: '»';
+            position: absolute;
+            left: -1.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: var(--color-dorado);
+        }
+        
+        .footer-nav ul li a:hover {
+            color: var(--color-dorado);
+            transform: translateX(10px);
+        }
+        
+        .footer-nav ul li a:hover::before {
+            opacity: 1;
+            left: -0.8rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+        
+        .footer-links a {
+            color: rgba(247, 243, 239, 0.8);
+            text-decoration: none;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            padding: 0.4rem 0;
+            position: relative;
+            display: inline-block;
+            font-weight: 500;
+        }
+        
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-dorado);
+            transition: width 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-dorado);
+            transform: translateX(5px);
+        }
+        
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+        
+        .footer-social-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(247, 243, 239, 0.1);
+            color: var(--color-marfil);
+            font-size: 1.4rem;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            border: 1px solid rgba(247, 243, 239, 0.2);
+        }
+        
+        .footer-social a:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: var(--color-terracota);
+            border-color: var(--color-terracota);
+            box-shadow: 0 8px 20px rgba(194, 106, 68, 0.3);
+        }
+        
+        .footer-social a:nth-child(2):hover {
+            background: var(--color-dorado);
+            border-color: var(--color-dorado);
+            box-shadow: 0 8px 20px rgba(217, 164, 65, 0.3);
+        }
+        
+        .footer-social a:nth-child(3):hover {
+            background: #1a7a8c;
+            border-color: #1a7a8c;
+            box-shadow: 0 8px 20px rgba(26, 122, 140, 0.3);
+        }
+        
+        .footer-bottom {
+            margin-top: 3.5rem;
+            padding: 1.8rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(247, 243, 239, 0.15);
+            font-size: 0.95rem;
+            color: rgba(247, 243, 239, 0.7);
+            position: relative;
+        }
+        
+        .footer-bottom::before {
+            content: '✦';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--color-dorado);
+            background: var(--color-azul-patrimonio);
+            padding: 0 1rem;
+            font-size: 1.2rem;
+        }
+        
+        /* Elementos decorativos adicionales */
+        .footer-decoration {
+            position: absolute;
+            bottom: 20%;
+            right: 5%;
+            opacity: 0.05;
+            font-size: 8rem;
+            color: var(--color-dorado);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+            }
+            
+            .footer-decoration {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: left;
+                gap: 2.5rem;
+            }
+            
+            .footer-info p {
+                max-width: 100%;
+            }
+            
+            .content h1 {
+                font-size: 1.9rem;
+            }
+            
+            .footer {
+                padding: 2.5rem 0 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .footer-container {
+                padding: 0 1.5rem;
+            }
+            
+            .footer-nav ul li a:hover {
+                transform: translateX(5px);
+            }
+            
+            .footer-social {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- includes/footer.html -->
+    <footer class="footer">
+        <div class="footer-decoration">
+            <i class='bx bxs-pyramid'></i>
+        </div>
+        
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>Museos MX</h3>
+                <p>Explora, aprende y disfruta del arte desde cualquier lugar. Nuestra misión es hacer el arte accesible para todos, rompiendo barreras físicas y sensoriales.</p>
+            </div>
+            
+            <div class="footer-nav">
+                <h4>Navegación</h4>
+                <ul class="nav-links">
+                    <li><a href="../../pages/inicio/inicio.html">Inicio</a></li>
+                    <li><a href="../../pages/museoInfo/museoList.html">Museos</a></li>
+                    <li><a href="../../pages/obras/obras.html">Obras</a></li>
+                    <li><a href="../../pages/Eventos/eventos.html">Eventos</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Enlaces Legales</h4>
+                <a href="#">Aviso de Privacidad</a>
+                <a href="#">Términos de Uso</a>
+                <a href="#">Contacto</a>
+                <a href="#">Accesibilidad</a>
+                <a href="#">Mapa del Sitio</a>
+            </div>
+            
+            <div class="footer-social-section">
+                <h4>Síguenos</h4>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                    <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Museo Virtual Accesible. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

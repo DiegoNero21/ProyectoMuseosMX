@@ -1,0 +1,172 @@
+:root {
+  --color-fondo: #f9f9f9;
+  --color-texto: #333;
+  --color-acento: #f97316;
+  --color-tarjeta: #fff;
+  --color-borde: #ccc;
+  --color-navbar: #fff;
+}
+
+body.dark-mode {
+  --color-fondo: #1a1a1a;
+  --color-texto: #e5e5e5;
+  --color-acento: #f97316;
+  --color-tarjeta: #2a2a2a;
+  --color-borde: #555;
+  --color-navbar: #222;
+}
+
+/* ======= Estilos generales ======= */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ======= Navbar ======= */
+.navbar {
+  background-color: var(--color-navbar);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 35px;
+  margin-right: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--color-texto);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar ul li a.active,
+.navbar ul li a:hover {
+  color: var(--color-acento);
+}
+
+/* ======= Contenido ======= */
+.container {
+  padding: 150px 60px;
+}
+
+h2 {
+  text-align: center;
+  color: var(--color-texto);
+  margin-bottom: 25px;
+}
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filtros input,
+.filtros select {
+  padding: 10px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  background-color: var(--color-tarjeta);
+  color: var(--color-texto);
+  transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+#filtrar {
+  background-color: var(--color-acento);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#filtrar:hover {
+  background-color: #d9600e;
+}
+
+.grid-museos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 25px;
+}
+
+.museo-card {
+  background: var(--color-tarjeta);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.museo-card:hover {
+  transform: translateY(-5px);
+}
+
+.museo-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.museo-card h3 {
+  margin: 15px;
+  color: var(--color-texto);
+}
+
+.museo-card p {
+  margin: 0 15px 15px 15px;
+  color: var(--color-texto);
+}
+
+.ver-mas {
+  display: block;
+  margin: 0 auto 20px;
+  background-color: var(--color-acento);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.ver-mas:hover {
+  background-color: #d9600e;
+}
+
+body.dark-mode .museo-card h3 {
+  color: #f5f5f5; /* texto claro visible sobre fondo oscuro */
+}
+
+body.dark-mode .museo-card {
+  background-color: #2b2b2b; /* fondo oscuro pero no negro */
+}
+
+body.dark-mode .museo-card p {
+  color: #ddd; /* texto del párrafo también visible */
+}

@@ -1,0 +1,233 @@
+:root {
+  --primario: #1A1A1A;   /* Negro Grafito */
+  --secundario: #F2F2F2; /* Blanco Museo */
+  --acento: #E2B93B;     /* Amarillo Mostaza */
+  --fondo: #D1D1D1;      /* Gris Acero */
+  --texto: #2B2B2B;      /* Negro Suave */
+
+  --card-radius: 16px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+/* Layout general */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, var(--secundario) 0%, #FFFFFF 60%);
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+/* Estructura principal */
+.wrap {
+  max-width: 960px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 32px;
+  align-items: center;
+}
+
+/* Panel de bienvenida */
+.hero {
+  padding: 36px;
+  border-radius: var(--card-radius);
+  background: linear-gradient(180deg, rgba(26,26,26,0.06), rgba(26,26,26,0.02));
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo .mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  background: var(--primario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secundario);
+  font-weight: 700;
+  font-size: 20px;
+  box-shadow: 0 6px 18px rgba(26,26,26,0.12);
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--primario);
+}
+
+.logo p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--texto);
+  opacity: 0.8;
+}
+
+.hero p.lead {
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 40ch;
+}
+
+.actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Tarjeta de login */
+.card {
+  background: var(--secundario);
+  padding: 28px;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.card h2 {
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  color: var(--primario);
+}
+
+.card p.sub {
+  margin: 0 0 18px 0;
+  color: var(--texto);
+  opacity: 0.9;
+  font-size: 13px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label {
+  font-size: 13px;
+  color: var(--texto);
+  font-weight: 600;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  font-size: 14px;
+  background: linear-gradient(180deg, #fff, #fbfbfb);
+  color: var(--texto);
+  outline: none;
+  transition: box-shadow .18s, border-color .18s;
+}
+
+input:focus {
+  box-shadow: 0 6px 18px rgba(226,185,59,0.12);
+  border-color: var(--acento);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  background: var(--primario);
+  color: var(--secundario);
+  box-shadow: 0 8px 20px rgba(26,26,26,0.12);
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--primario);
+  border: 1px solid rgba(0,0,0,0.06);
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.accent { color: var(--acento); font-weight: 700; }
+
+.small { font-size: 13px; color: var(--texto); opacity: .9; }
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.06), transparent);
+  margin: 16px 0;
+  border-radius: 4px;
+}
+
+.help {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.social { margin-left: auto; display: flex; gap: 8px; }
+
+.legal {
+  font-size: 12px;
+  color: var(--texto);
+  opacity: .8;
+  margin-top: 12px;
+}
+
+/* Responsivo */
+@media (max-width:880px) {
+  .wrap { grid-template-columns: 1fr; }
+  .hero { order: 2; }
+  .card { order: 1; }
+}
+
+/* Modo oscuro (doble clic en logo) */
+:root[data-theme="dark"] {
+  --primario: #F2F2F2;
+  --secundario: #1A1A1A;
+  --acento: #E2B93B;
+  --fondo: #0F0F0F;
+  --texto: #F2F2F2;
+}
+
+.logo .mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px; /* opcional, mantiene el estilo redondeado */
+}

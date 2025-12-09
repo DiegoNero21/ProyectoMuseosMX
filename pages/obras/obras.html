@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obras | Museo Virtual</title>
+  <link rel="stylesheet" href="../../assets/css/inicio.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+
+  <!-- Sección principal -->
+  <main class="listado-obras">
+    <h2>Listado de Obras</h2>
+
+    <!-- Barra de filtros -->
+    <div class="filtros">
+      <select id="filtro-categoria">
+        <option value="">Categoría</option>
+        <option value="pintura">Pintura</option>
+        <option value="escultura">Escultura</option>
+        <option value="fotografía">Fotografía</option>
+      </select>
+
+      <select id="filtro-tecnica">
+        <option value="">Técnica</option>
+        <option value="oleo">Óleo</option>
+        <option value="acrilico">Acrílico</option>
+        <option value="mixta">Mixta</option>
+      </select>
+
+      <select id="filtro-autor">
+        <option value="">Autor</option>
+        <option value="vangogh">Vincent van Gogh</option>
+        <option value="picasso">Pablo Picasso</option>
+        <option value="kahlo">Frida Kahlo</option>
+      </select>
+
+      <button class="btn" id="btn-filtrar">Filtrar</button>
+    </div>
+
+    <!-- Grid de obras -->
+    <div class="obras-grid" id="obras-grid"></div>
+
+
+  </main>
+
+
+  <script type="module" src="../../assets/js/navbar.js"></script>
+  <script src="../../assets/js/footer.js"></script>
+  <script type="module" src="../../assets/js/obras.js"></script>
+
+</body>
+</html>

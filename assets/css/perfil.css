@@ -1,0 +1,55 @@
+.perfil-section {
+  padding-top: 140px;
+  display: flex;
+  justify-content: center;
+}
+
+.perfil-card {
+  background: #fff;
+  padding: 30px;
+  width: 350px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.perfil-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.perfil-card h2 {
+  margin-bottom: 8px;
+  color: var(--primario);
+}
+
+.perfil-card p {
+  color: var(--texto);
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.btn-logout {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: var(--acento);
+  color: var(--primario);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-logout:hover {
+  background: #d7a931;
+}
+
+/* Dark mode */
+body[data-theme="dark"] .perfil-card {
+  background: #222;
+  color: #fff;
+  border: 1px solid #333;
+}

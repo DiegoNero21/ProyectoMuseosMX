@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login — Museo Contemporáneo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+
+<body>
+  <main class="wrap" role="main">
+    <section class="hero" aria-label="Bienvenida">
+      <div class="logo">
+        <div class="mark"><img src="../../assets/img/logo3.png" alt="Museos MX"></div>
+        <div>
+          <h1>Museos MX</h1>
+          <p>Explora museos, exposiciones y colecciones desde tu bolsillo.</p>
+        </div>
+      </div>
+
+      <p class="lead">Conéctate para guardar tus visitas, crear rutas personalizadas y recibir recomendaciones según tus
+        intereses. Diseño inspirado en galerías contemporáneas para que las obras respiren.</p>
+
+      <div class="actions">
+        <button class="btn" aria-pressed="false">Explorar sin cuenta</button>
+        <button class="btn secondary">Ver museos</button>
+      </div>
+    </section>
+
+    <aside class="card" aria-label="Iniciar sesión">
+      <h2>Iniciar sesión</h2>
+      <p class="sub">Ingresa con tu correo para acceder a tu perfil y guardar favoritos.</p>
+
+      <form id="loginForm">
+        <div>
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required>
+        </div>
+
+        <div>
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" placeholder="●●●●●●●●" required>
+        </div>
+
+        <div class="row">
+          <!-- <label class="remember"><input type="checkbox" /> Recuérdame</label>
+          <a href="#" class="small">¿Olvidaste tu contraseña?</a> -->
+        </div>
+
+        <div class="buttons">
+          <button class="btn" type="submit">Ingresar</button>
+          <button class="btn secondary" type="button" onclick="window.location.href='../register/registro.html'">Crear
+            cuenta</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="help">
+          <span class="small">¿Prefieres iniciar con redes?</span>
+          <div class="social">
+            <button class="btn secondary" type="button" id="loginGoogle">G</button>
+            <button class="btn secondary" type="button">f</button>
+          </div>
+        </div>
+
+        <p class="legal">Al iniciar aceptas los términos y condiciones. <span class="accent">Museos MX</span></p>
+      </form>
+    </aside>
+  </main>
+
+  <script>
+    // Alternar modo oscuro con doble clic en el logo
+    document.querySelector('.logo').addEventListener('dblclick', () => {
+      const root = document.documentElement;
+      const dark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', dark ? 'light' : 'dark');
+    });
+  </script>
+  <script type="module" src="../../assets/js/login.js"></script>
+  <script type="module" src="../../assets/js/authState.js"></script>
+</body>
+
+</html>

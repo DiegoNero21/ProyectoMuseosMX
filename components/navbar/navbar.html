@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/css/inicio.css" />
+    <!-- Font Awesome con tamaño ajustado -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      /* Estilos para iconos más pequeños */
+      .fas {
+        font-size: 0.9em !important;
+        vertical-align: middle;
+      }
+      
+      /* Iconos específicos */
+      .menu-toggle .fas,
+      .accessibility-menu-btn .fas,
+      .speech-menu-btn .fas,
+      .profile-btn .fas {
+        font-size: 1.1em !important;
+      }
+      
+      /* Iconos dentro del menú de accesibilidad */
+      .accessibility-icon .fas {
+        font-size: 1em !important;
+      }
+      
+      .accessibility-check .fas {
+        font-size: 0.8em !important;
+      }
+      
+      /* Iconos de controles de voz */
+      .speech-control-buttons .fas {
+        font-size: 0.85em !important;
+      }
+      
+      /* Header del perfil */
+      .profile-avatar .fas {
+        font-size: 1.2em !important;
+      }
+      
+      /* Botón cerrar sesión */
+      .logout-btn .fas {
+        font-size: 0.9em !important;
+        margin-right: 5px;
+      }
+      
+      /* Para los dos círculos de escala de grises */
+      .accessibility-icon {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+      }
+      
+      .accessibility-icon .fas:first-child {
+        color: #777;
+        font-size: 0.8em !important;
+      }
+      
+      .accessibility-icon .fas:last-child {
+        color: #333;
+        font-size: 0.8em !important;
+        position: absolute;
+        left: 8px;
+        top: 0;
+      }
+    </style>
+    <!-- Importar Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth-compat.js"></script>
+  </head>
+
+  <body>
+    <!-- assets/components/navbar.html -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../../assets/img/logo.png" alt="Museos MX" />
+        <h1>Museos MX</h1>
+      </div>
+
+      <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../../pages/inicio/inicio.html">Inicio</a></li>
+        <li><a href="../../pages/museoInfo/museoList.html">Museos</a></li>
+        <li><a href="../../pages/obras/obras.html">Obras</a></li>
+        <li><a href="../../pages/Eventos/eventos.html">Eventos</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <!-- Accesibilidad -->
+        <div class="accessibility-dropdown">
+          <button
+            id="accessibility-menu-toggle"
+            class="accessibility-menu-btn"
+            title="Opciones de accesibilidad"
+          >
+            <i class="fas fa-universal-access"></i>
+          </button>
+
+          <div class="accessibility-dropdown-menu">
+            <div class="accessibility-header">
+              <h4><i class="fas fa-universal-access" style="font-size: 0.9em !important; margin-right: 8px;"></i> Accesibilidad</h4>
+            </div>
+
+            <div class="accessibility-options">
+              <!-- Modo oscuro -->
+              <button
+                class="accessibility-option"
+                id="dark-mode-toggle"
+                data-mode="dark"
+              >
+                <span class="accessibility-icon"><i class="fas fa-moon"></i></span>
+                <div class="accessibility-text">
+                  <strong>Modo oscuro</strong>
+                </div>
+                <span class="accessibility-check"><i class="fas fa-check"></i></span>
+              </button>
+
+              <!-- Modo negativo -->
+              <button
+                class="accessibility-option"
+                id="negative-mode-toggle"
+                data-mode="negative"
+              >
+                <span class="accessibility-icon"><i class="fas fa-adjust"></i></span>
+                <div class="accessibility-text">
+                  <strong>Modo negativo</strong>
+                </div>
+                <span class="accessibility-check"><i class="fas fa-check"></i></span>
+              </button>
+
+              <!-- Alto contraste -->
+              <button
+                class="accessibility-option"
+                id="contrast-mode-toggle"
+                data-mode="contrast"
+              >
+                <span class="accessibility-icon"><i class="fas fa-bolt"></i></span>
+                <div class="accessibility-text">
+                  <strong>Alto contraste</strong>
+                </div>
+                <span class="accessibility-check"><i class="fas fa-check"></i></span>
+              </button>
+
+              <!-- Escala de grises -->
+              <button
+                class="accessibility-option"
+                id="grayscale-toggle"
+                data-mode="grayscale"
+              >
+                <span class="accessibility-icon">
+                  <i class="fas fa-circle"></i>
+                  <i class="fas fa-circle"></i>
+                </span>
+                <div class="accessibility-text">
+                  <strong>Escala de grises</strong>
+                </div>
+                <span class="accessibility-check"><i class="fas fa-check"></i></span>
+              </button>
+            </div>
+
+            <div class="accessibility-footer">
+              <button id="reset-accessibility" class="reset-btn">
+                <i class="fas fa-redo" style="font-size: 0.8em !important; margin-right: 5px;"></i> Restablecer
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- LECTOR DE VOZ - SEPARADO Y FUERA DEL MENÚ DE ACCESIBILIDAD -->
+        <div class="speech-dropdown">
+          <button id="speech-toggle" class="speech-menu-btn" title="Lector de voz">
+            <i class="fas fa-volume-up"></i>
+          </button>
+
+          <!-- Controles de voz (menú desplegable) -->
+          <div id="speech-controls" class="speech-controls">
+            <div class="speech-header">
+              <h5><i class="fas fa-headphones" style="font-size: 0.9em !important; margin-right: 8px;"></i> Controles de voz</h5>
+              <button id="speech-close" class="speech-close"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="speech-options">
+              <div class="speech-option">
+                <label><i class="fas fa-tachometer-alt" style="font-size: 0.9em !important; margin-right: 8px;"></i> Velocidad:</label>
+                <div class="speech-buttons">
+                  <button data-rate="0.5">0.5x</button>
+                  <button data-rate="0.8">0.8x</button>
+                  <button data-rate="1" class="active">1x</button>
+                  <button data-rate="1.2">1.2x</button>
+                  <button data-rate="1.5">1.5x</button>
+                </div>
+              </div>
+              
+              <div class="speech-option">
+                <label><i class="fas fa-user" style="font-size: 0.9em !important; margin-right: 8px;"></i> Voz:</label>
+                <select id="speech-voice-select">
+                  <option value="">Cargando voces...</option>
+                </select>
+              </div>
+              
+              <div class="speech-option">
+                <label><i class="fas fa-volume-up" style="font-size: 0.9em !important; margin-right: 8px;"></i> Volumen:</label>
+                <input type="range" id="speech-volume" min="0" max="1" step="0.1" value="1">
+              </div>
+            </div>
+            
+            <div class="speech-control-buttons">
+              <button id="speech-pause" class="speech-btn secondary">
+                <i class="fas fa-pause"></i>
+              </button>
+              <button id="speech-resume" class="speech-btn secondary">
+                <i class="fas fa-play"></i>
+              </button>
+              <button id="speech-stop" class="speech-btn danger">
+                <i class="fas fa-stop"></i>
+              </button>
+            </div>
+            
+            <div class="speech-progress">
+              <div class="speech-progress-bar"></div>
+              <div class="speech-progress-text">
+                <i class="fas fa-check-circle" style="font-size: 0.9em !important; margin-right: 5px;"></i> Listo para leer
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Perfil de usuario -->
+        <div class="profile-container">
+          <button id="profile-toggle" class="profile-btn">
+            <i class="fas fa-user-circle"></i>
+          </button>
+
+          <div id="profile-card" class="profile-card">
+            <div class="profile-header">
+              <div class="profile-avatar"><i class="fas fa-user-circle"></i></div>
+              <div class="profile-info">
+                <h3 id="profile-name">Cargando...</h3>
+                <p id="profile-email">Cargando...</p>
+              </div>
+            </div>
+            <div class="profile-actions">
+              <button id="logout-btn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <script src="../../assets/js/firebaseconfig.js"></script>
+    <script src="../../assets/js/navbar.js"></script>
+    <!-- Agrega speech.js después de navbar.js -->
+    <script type="module" src="../../assets/js/speech.js"></script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crear cuenta — Museo Contemporáneo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/register.css">
+</head>
+<body>
+  <main class="wrap" role="main">
+    <section class="hero" aria-label="Bienvenida">
+      <div class="logo">
+        <div class="mark">M</div>
+        <div>
+          <h1>Museos MX</h1>
+          <p>Descubre y guarda tus museos favoritos de todo México.</p>
+        </div>
+      </div>
+
+      <p class="lead">Crea tu cuenta para descubrir exposiciones exclusivas, recibir recomendaciones y planificar tus próximas visitas.</p>
+
+      <div class="actions">
+        <button class="btn" aria-pressed="false">Explorar sin cuenta</button>
+        <button class="btn secondary">Ver museos</button>
+      </div>
+    </section>
+
+    <aside class="card" aria-label="Crear cuenta">
+      <h2>Crear cuenta</h2>
+      <p class="sub">Regístrate para comenzar a explorar, guardar tus museos favoritos y crear rutas personalizadas.</p>
+
+      <form id="registerForm">
+        <div>
+          <label for="name">Nombre completo</label>
+          <input id="name" name="name" type="text" placeholder="Tu nombre completo" required>
+        </div>
+
+        <div>
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" required>
+        </div>
+
+        <div>
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" required>
+        </div>
+
+        <div>
+          <label for="confirm">Confirmar contraseña</label>
+          <input id="confirm" name="confirm" type="password" placeholder="••••••••" required>
+        </div>
+
+        <div class="buttons">
+          <button class="btn" type="submit">Registrarse</button>
+          <button class="btn secondary" type="button" onclick="window.location.href='../login/login.html'">Iniciar sesión</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="help">
+          <span class="small">¿Prefieres registrarte con redes?</span>
+          <div class="social">
+            <button class="btn secondary" type="button" id="googleBtn">G</button>
+            <button class="btn secondary" type="button">f</button>
+          </div>
+        </div>
+
+        <p class="legal">Al registrarte aceptas los términos y condiciones. <span class="accent">Museos MX</span></p>
+      </form>
+    </aside>
+  </main>
+
+  <script type="module" src="../../assets/js/register.js"></script>
+  <script type="module" src="../auth/authState.js"></script>
+</body>
+</html>

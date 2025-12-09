@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obra - Museo Virtual</title>
+  <link rel="stylesheet" href="../../assets/css/inicio.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+
+  <!-- Contenido principal -->
+  <main class="obra-detalle">
+    
+    <!-- Imagen de la obra -->
+    <div class="obra-imagen">
+      <img id="obra-img" src="" alt="Imagen de la obra">
+    </div>
+
+    <!-- Información de la obra -->
+    <div class="obra-info">
+      <h2 id="obra-titulo">Cargando...</h2>
+      <p class="autor" id="obra-autor"></p>
+      <p class="descripcion" id="obra-descripcion"></p>
+
+      <!-- Detalles esenciales -->
+      <ul class="detalles-obra">
+        <li><strong>Técnica:</strong> <span id="obra-tecnica"></span></li>
+        <li><strong>Dimensiones:</strong> <span id="obra-dimensiones"></span></li>
+        <li><strong>Ubicación actual:</strong> <span id="obra-ubicacion"></span></li>
+      </ul>
+
+      <!-- Contenedor para detalles opcionales -->
+      <div id="obra-detalles-opcionales"></div>
+
+      <!-- Botón volver -->
+      <a href="../inicio/inicio.html" class="btn-volver">← Volver al inicio</a>
+    </div>
+
+  </main>
+
+  <script type="module" src="../../assets/js/navbar.js"></script>
+  <script type="module" src="../../assets/js/obraInfo.js"></script>
+  <script src="../../assets/js/footer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listado de Museos</title>
+  <link rel="stylesheet" href="../../assets/css/museoList.css" />
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <div id="navbar-container"></div>
+
+  <main class="container">
+    <h2>Listado general de museos</h2>
+
+    <!-- Filtros -->
+    <div class="filtros">
+      <input type="text" id="buscar" placeholder="Buscar museo por nombre...">
+
+      <select id="categoria">
+        <option value="">Categoría</option>
+        <option value="arte">Arte</option>
+        <option value="historia">Historia</option>
+        <option value="ciencia">Ciencia</option>
+        <option value="arqueologia">Arqueología</option>
+      </select>
+
+      <select id="ubicacion">
+        <option value="">Ubicación</option>
+        <option value="cdmx">CDMX</option>
+        <option value="guadalajara">Guadalajara</option>
+        <option value="monterrey">Monterrey</option>
+        <option value="puebla">Puebla</option>
+      </select>
+
+      <button id="filtrar">Filtrar</button>
+    </div>
+
+    <!-- Listado dinámico -->
+    <div class="grid-museos" id="listaMuseos"></div>
+  </main>
+
+  <script type="module" src="../../assets/js/navbar.js"></script>
+  <script src="../../assets/js/footer.js"></script>
+
+  <!-- Script dinámico -->
+  <script type="module" src="../../assets/js/museoList.js"></script>
+
+</body>
+</html>

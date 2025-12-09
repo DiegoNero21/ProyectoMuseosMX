@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Museos MX — Explora el arte y la cultura</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/css/inicio.css" />
+  </head>
+  <body>
+    <!-- NAVBAR SE CARGARÁ AQUÍ -->
+    <div id="navbar-container"></div>
+
+    <!-- Scripts en orden CORRECTO -->
+    <script type="module" src="../../assets/js/firebaseconfig.js"></script>
+    <script type="module" src="../../assets/js/navbar.js"></script>
+    <script src="../../assets/js/init.js"></script> <!-- NUEVO -->
+    <script type="module" src="../../assets/js/inicio.js"></script>
+    <script src="../../assets/js/footer.js"></script>
+    
+    <!-- El contenido queda aquí (será movido por init.js) -->
+    <header class="hero">
+      <div class="hero-content">
+        <h2>Explora los museos y exposiciones de México</h2>
+        <p>
+          Descubre la riqueza cultural de nuestro país, desde museos icónicos
+          hasta joyas escondidas en cada rincón.
+        </p>
+        <button class="btn">Ver Museos</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Sección Museos -->
+      <section class="museos">
+        <h3>Museos destacados de México</h3>
+        <div class="grid" id="museos-container"></div>
+      </section>
+
+      <!-- Sección Categorías -->
+      <section class="categorias">
+        <h3>Explora por categoría</h3>
+        <div class="cat-grid">
+          <div class="cat">Arte Moderno</div>
+          <div class="cat">Historia</div>
+          <div class="cat">Cultura Indígena</div>
+          <div class="cat">Ciencia</div>
+          <div class="cat">Arqueología</div>
+        </div>
+      </section>
+
+      <!-- Sección Eventos -->
+      <section class="eventos">
+        <h3>Próximas exposiciones</h3>
+        <div class="grid">
+          <!-- JS insertará las exposiciones aquí -->
+        </div>
+      </section>
+
+      <!-- Sección Curiosidades -->
+      <section class="curiosidades">
+        <h3>Sabías que...</h3>
+        <div class="curios-grid">
+          <div class="dato">
+            🏺 El Museo Nacional de Antropología alberga más de 600,000 piezas
+            arqueológicas.
+          </div>
+          <div class="dato">
+            🎨 El Museo Soumaya recibe más de 1 millón de visitantes cada año.
+          </div>
+          <div class="dato">
+            🕍 El Museo Amparo combina arte precolombino con exposiciones
+            contemporáneas.
+          </div>
+        </div>
+      </section>
+
+      <section class="obras">
+        <h2>Obras Destacadas</h2>
+        <div id="obras-container" class="obras-grid">
+          <!-- Aquí JS insertará las obras -->
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

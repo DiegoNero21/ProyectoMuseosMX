@@ -1,0 +1,133 @@
+/* ======== SECCIÓN DESCRIPCIÓN DEL MUSEO ======== */
+.museo-descripcion {
+  padding: 80px 10%;
+  background-color: var(--bg-color, #f9f9f9);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+[data-theme="dark"] .museo-descripcion {
+  background-color: #121212;
+  color: #fff;
+}
+
+.museo-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.museo-texto {
+  flex: 1 1 50%;
+}
+
+.museo-texto h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--accent-color, #333);
+}
+
+[data-theme="dark"] .museo-texto h2 {
+  color: #fff;
+}
+
+.museo-texto p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: var(--text-color, #444);
+}
+
+[data-theme="dark"] .museo-texto p {
+  color: #ddd;
+}
+
+.museo-detalles {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.museo-detalles li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.botones-museo {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-visitar,
+.btn-regresar {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-visitar {
+  background-color: #ff6600;
+  color: #fff;
+}
+
+.btn-visitar:hover {
+  background-color: #e25500;
+}
+
+.btn-regresar {
+  background-color: transparent;
+  border: 2px solid #ff6600;
+  color: #ff6600;
+}
+
+.btn-regresar:hover {
+  background-color: #ff6600;
+  color: #fff;
+}
+
+.museo-imagen {
+  flex: 1 1 40%;
+  text-align: center;
+}
+
+.museo-imagen img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.museo-imagen img:hover {
+  transform: scale(1.03);
+}
+
+/* ======== RESPONSIVO ======== */
+@media (max-width: 900px) {
+  .museo-contenido {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .museo-texto {
+    flex: 1 1 100%;
+  }
+
+  .museo-imagen img {
+    max-width: 90%;
+  }
+
+  .botones-museo {
+    justify-content: center;
+  }
+}
+
+main {
+  margin-top: 100px; /* Ajusta según la altura real de tu navbar */
+}
+

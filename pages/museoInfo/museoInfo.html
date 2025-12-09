@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museo | MuseoMX</title>
+  <link rel="stylesheet" href="../../assets/css/descMuseo.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar-container"></div>
+  <main>
+    <section class="museo-descripcion">
+      <div class="museo-contenido">
+        <div class="museo-texto">
+          
+          <h2 id="museo-nombre">Cargando...</h2>
+
+          <p id="museo-descripcion">
+            <!-- JS lo inserta -->
+          </p>
+
+          <ul class="museo-detalles">
+            <li><strong>Dirección:</strong> <span id="museo-direccion"></span></li>
+            <li><strong>Ciudad:</strong> <span id="museo-ciudad"></span></li>
+            <li><strong>Horario:</strong> <span id="museo-horario"></span></li>
+            <li><strong>Teléfono:</strong> <span id="museo-telefono"></span></li>
+            <li><strong>Creado en:</strong> <span id="museo-creado"></span></li>
+            <li><strong>Actualizado en:</strong> <span id="museo-actualizado"></span></li>
+          </ul>
+
+          <div class="botones-museo">
+            <a href="../inicio/inicio.html" class="btn-regresar">← Regresar al inicio</a>
+            <a id="museo-url" href="#" target="_blank" class="btn-visitar">Visitar sitio oficial</a>
+          </div>
+
+        </div>
+
+        <div class="museo-imagen">
+          <img id="museo-imagen" src="" alt="Imagen del museo">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script type="module" src="../../assets/js/navbar.js"></script>
+  <script src="../../assets/js/footer.js"></script>
+  <script type="module" src="../../assets/js/museoInfo.js"></script>
+
+</body>
+</html>
